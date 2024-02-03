@@ -35,7 +35,7 @@ class Proxy:
     username: Optional[str]
     password: Optional[str]
     timeout: float = attrs.field(init=False, eq=False)
-    exit_ip: str = attrs.field(init=False, eq=False)
+    exit_ip: str = attrs.field(init=False, eq=False, default="")
 
     async def check(self, *, settings: Settings) -> None:
         async with settings.semaphore:
